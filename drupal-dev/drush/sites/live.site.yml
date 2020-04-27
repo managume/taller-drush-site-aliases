@@ -1,0 +1,5 @@
+live:
+  host: drupal-live.ddev.site
+  root: /var/www/html
+  uri: "https://drupal-live.ddev.site"
+  user: maguilar
