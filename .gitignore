@@ -1,1 +1,14 @@
+# Common
 .DS_Store
+
+# Drupal DEV
+drupal-dev/vendor
+drupal-dev/web/sites/default/files/*
+drupal-dev/web/sites/default/settings.php
+drupal-dev/web/sites/default/settings.ddev.php
+# Drupal Live
+drupal-live/vendor
+drupal-live/web/sites/default/files/*
+drupal-live/web/sites/default/settings.php
+drupal-live/web/sites/default/settings.ddev.php
+!drupal-live/web/sites/default/files/cat.png
