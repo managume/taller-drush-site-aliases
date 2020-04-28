@@ -2,31 +2,31 @@
 
 En este taller vamos a ver cómo utilizar los drush site aliases.
 
-## Levantar entornos
-Las pruebas se hacen en local utilizando un entorno Docker gracias a DDEV-Local con configuración NFS activada.
+## Entornos
+Para las siguientes pruebas se utilizarán dos entornos:
 
-Seguir los siguientes pasos para levantar ambos entornos:
+* drupal-dev: Este entorno se ejecutará en local utilizando DDEV.
+* drupal-live: Este entorno se ha desplegado en un servidor externo.
 
-* Drupal-DEV
+Para montar Drupal-DEV:
 ```sh
 cd drupal-dev
-ddev start
-# En caso de error desactivar la configuración NFS lanzando:
-# ddev config --nfs-mount-enabled=false
-# ddev start
 ddev composer install
-ddev drush si -y
+ddev drush si --account-name=admin --account-pass=admin
+ddev
 ```
-* Drupal-LIVE
+
+Para montar Drupal-LIVE:
 ```sh
 cd drupal-live
-ddev start
-# En caso de error desactivar la configuración NFS lanzando:
-# ddev config --nfs-mount-enabled=false
-# ddev start
-ddev composer install
-ddev drush sql-cli < backup.sql
+composer install
+# Pre-instalación para que se autogenere el settings.php con un nuevo HASH
+drush si --account-name=admin --account-pass=admin
+# Importamos el backup
+drush sql-cli < backup.sql
+drush cr
 ```
+*Nota:* Si tras aplicar el backup hay error en el CSS y el cache-rebuild no lo repara. Acceder a los ajustes de apariencia y dar al botón *Save Configuration*.
 
 ## Operaciones habituales
 
