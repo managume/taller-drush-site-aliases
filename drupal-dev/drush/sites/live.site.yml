@@ -1,5 +1,9 @@
 live:
-  host: drupal-live.ddev.site
-  root: /var/www/html
-  uri: "https://drupal-live.ddev.site"
-  user: maguilar
+  # Dirección o IP del Host donde se encuentra la instancia de Drupal
+  host: drupal-live.example.org
+  # Ruta a la instancia Drupal
+  root: /var/www/html/drupal-live
+  # URL del Drupal
+  uri: "http://drupal-live.example.org"
+  # Usuario del sistema operativo
+  user: miusuario
