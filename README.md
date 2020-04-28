@@ -56,3 +56,4 @@ ddev drush @live ups
 ```sh
 ddev drush rsync @live:%files/ @self:%files
 ```
+*Nota:* En el entorno @live puede que devuelva un error si utilizamos `%files/`, si fuera así bastaría con utilizar la ruta completa a la carpeta `files` acabando siempre con `/`.
