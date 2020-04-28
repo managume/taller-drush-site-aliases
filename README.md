@@ -12,8 +12,8 @@ Para montar Drupal-DEV:
 ```sh
 cd drupal-dev
 ddev composer install
-ddev drush si --account-name=admin --account-pass=admin
-ddev
+# Drush utiliza SSH para ejecutar las diferentes tareas en los entornos remotos, por lo que debemos pasar a DDEV las claves SSH.
+ddev auth ssh
 ```
 
 Para montar Drupal-LIVE:
@@ -42,7 +42,7 @@ ddev drush @live cr
 ```
 ### Actualizar base de datos de entorno remoto
 ```sh
-ddev drush @live updb -y
+ddev drush @live updb
 ```
 ### Listar log de entorno remoto
 ```sh
